@@ -6,10 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 
 import {HttpClientModule} from '@angular/common/http';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LoadingComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

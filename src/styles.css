@@ -4,3 +4,19 @@ html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-progress-spinner{
+    position: absolute !important;
+    top: 50%;
+    left: calc(50vw - 100px);
+}
+
+.disable-background{
+    background-color: #968d8d;
+    opacity: 70%;
+    pointer-events: none;
+}
+
+.mat-card{
+    margin: 10px;
+}
