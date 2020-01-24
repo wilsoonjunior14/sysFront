@@ -3,18 +3,17 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import { map, windowCount } from "rxjs/operators";
 
-import MoviesService from "./services/movies.service";
-import {LoadingComponent} from "./loading/loading.component";
+import MoviesService from "../services/movies.service";
+import {LoadingComponent} from "../loading/loading.component";
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-
-export class AppComponent{
-  /*title: string =  'sysFront';
+export class DashboardComponent implements OnInit {
+title: string =  'sysFront';
   movies     = [];
   genres     = [];
   visible: Boolean = true;
@@ -96,10 +95,6 @@ export class AppComponent{
     });
   }
 
-  tapOnMovie(movie){
-    console.log(movie);
-  }
-
   async changeOptionMovies(evt){
     this.page = 1;
     this.movies = [];
@@ -162,6 +157,6 @@ export class AppComponent{
       this.loading.end();
       this.visible = false;
     }
-  }*/
+  }
 
 }

@@ -8,17 +8,23 @@ import { MyMaterialModule } from './material.module';
 import {HttpClientModule} from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MoviesComponent } from './movies/movies.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent
+    LoadingComponent,
+    DashboardComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
     MyMaterialModule,
     HttpClientModule,
     MatCarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   providers: [LoadingComponent],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+<mat-toolbar  color="primary"  class="fixed-header">
+  <mat-toolbar-row>
+  <span><img  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="  style="width:50px;"></span>
+  <a class="white">{{title}}</a>
+  <mat-form-field >
+    <mat-select (ngModel)="search.idOption" [value]="search.idOption" (selectionChange)="changeOptionMovies($event)">
+      <mat-option class="black" value="0" aria-selected="true" selected>Mais Populares</mat-option>
+      <mat-option class="black" *ngFor="let genre of genres" [value]="genre.id">
+        {{genre.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-loading [visible]="visible" style="position: absolute; top: 50%; z-index: 1000"></app-loading>
+
+<h1 class="white center-align">SysFront Filmes</h1>
+
+<mat-grid-list cols="{{breakpoint}}" rowHeight="500px">
+
+  <mat-grid-tile *ngFor="let movie of movies" >
+      <div>
+        <a routerLink="/movies/{{movie.id}}">
+          <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Nenhuma Imagem" style="min-width: 280px; min-height: 280px; height: 350px; max-height: 350px;"/>
+        </a>
+        <p style="overflow-wrap: break-word; margin-left: 0;" class="white center-align">{{movie.title}}</p>
+      </div>
+  </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,0 +1,30 @@
+<mat-toolbar  color="primary"  class="fixed-header">
+  <mat-toolbar-row>
+  <span><img  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="  style="width:50px;"></span>
+  <a class="white">{{title}}</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<a routerLink="" mat-raised-button color="primary" style="margin: 16px;">Voltar</a>
+<mat-card style="background: black; ">
+  <mat-card-header class="white">
+    <mat-card-title ><h1>{{movie.title}}</h1></mat-card-title>
+    <mat-card-subtitle ><h2>{{movie.tagline}}</h2></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="center-align">
+    <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" style="max-height: 500px; max-width: 480px;" alt="Nenhuma Imagem"/>
+    <p class="white" style="margin: 0 50px; font-size: 1.0rem;"><B>Descrição: </B>{{movie.overview}}</p>
+    <p *ngIf="movie.homepage != ''" class="white"><b>Site oficial: </b><a href="{{movie.homepage}}" class="white" target="_blank">{{movie.homepage}}</a></p>
+    <p class="white"><b>Avaliação: </b>{{movie.vote_average}}</p>
+  </mat-card-content>
+</mat-card>
+
+<h2 class="center-align white">Produção</h2>
+<mat-grid-list cols="{{breakpoint}}">
+  <mat-grid-tile *ngFor="let p of movie.production_companies">
+    <div class="center-align white">
+    <img mat-card-lg-image *ngIf="p.logo_path != null && p.logo_path != ''" src="https://image.tmdb.org/t/p/w500{{p.logo_path}}" alt="Nenhuma Imagem" style="border-radius: 50%;background-color: white;"/>
+    <p class="white">{{p.name}}</p>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
