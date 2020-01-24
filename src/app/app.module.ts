@@ -7,7 +7,7 @@ import { MyMaterialModule } from './material.module';
 
 import {HttpClientModule} from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
-
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +17,7 @@ import { LoadingComponent } from './loading/loading.component';
     BrowserModule,
     MyMaterialModule,
     HttpClientModule,
+    MatCarouselModule,
     BrowserAnimationsModule
   ],
   providers: [LoadingComponent],

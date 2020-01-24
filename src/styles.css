@@ -11,6 +11,10 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     left: calc(50vw - 100px);
 }
 
+body{
+    background-color: black !important;
+}
+
 .disable-background{
     background-color: #968d8d;
     opacity: 70%;
@@ -19,4 +23,35 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
 
 .mat-card{
     margin: 10px;
+}
+
+.mat-toolbar-row .mat-form-field{
+    position: absolute;
+    right: 16px;
+    margin-top: 5px;
+}
+
+.mat-grid-list, .mat-grid-list p{
+    margin: 16px;
+}
+
+.white{
+    color: white !important;
+}
+
+.black, .ng-tns-c3-1 .ng-star-inserted, .mat-select-arrow-wrapper{
+    color: black !important;
+}
+
+.center-align{
+    text-align: center !important;
+}
+
+.mat-select-trigger{
+    background: white;
+    padding: 12px;
+}
+
+.mat-form-field-underline{
+    display: none;
 }

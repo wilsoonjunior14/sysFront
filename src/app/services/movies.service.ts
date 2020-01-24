@@ -26,4 +26,8 @@ export default class MoviesService {
      return this.http.get(config.URLApi + config.PathSearchMovies + config.API_KEY + query);
    }
 
+   getGenres(){
+     return this.http.get(config.URLApi + config.PathSearchGenres + config.API_KEY + "&language=pt-BR")
+   }
+
 }
