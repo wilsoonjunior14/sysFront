@@ -78,3 +78,18 @@ body{
     max-width: calc(100% - 500px);
     height: auto;
 }
+
+.flex-box{
+    min-width: 280px;
+    max-width: 350px;
+    align-content: center;
+    text-align: center;
+}
+
+.flex-container{
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
